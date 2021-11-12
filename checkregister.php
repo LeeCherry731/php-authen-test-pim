@@ -3,14 +3,14 @@
 	$user = "root";
 	$pass = "";
 	$db = "etech";
-	$email=$_GET['email'];
-	$password=$_GET['password'];
-	$fname=$_GET['fname'];
-	$lname=$_GET['lname'];
-	$phone=$_GET['phone'];
+	$email=$_POST['email'];
+	$password=$_POST['password'];
+	$fname=$_POST['fname'];
+	$lname=$_POST['lname'];
+	$phone=$_POST['phone'];
 	$conn = mysqli_connect($host,$user,$pass,$db);
 	mysqli_set_charset($conn,"utf8");
-	$sql = "INSERT INTO `member` (`email`, `password`, `fname`, `lname`, `phone`) VALUES ('$email', '$password', '$fname', '$lname', '$phone')";
+	$sql = "INSERT INTO `member` (`email`, `password`, `fname`, `lname`, `phone`) VALUES ('$email', '$password', '$fname', '$lname', '$phone');";
 $qurey=mysqli_query($conn,$sql);
 	if($qurey){
 		echo '<script language="javascript">';
